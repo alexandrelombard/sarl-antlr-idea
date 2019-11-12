@@ -510,6 +510,18 @@ public class SarlParserBaseListener implements SarlParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterUsesDeclaration(SarlParser.UsesDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUsesDeclaration(SarlParser.UsesDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterObjectDeclaration(SarlParser.ObjectDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}

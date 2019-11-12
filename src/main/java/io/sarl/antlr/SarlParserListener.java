@@ -420,6 +420,16 @@ public interface SarlParserListener extends ParseTreeListener {
 	 */
 	void exitOnDeclaration(SarlParser.OnDeclarationContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SarlParser#usesDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterUsesDeclaration(SarlParser.UsesDeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SarlParser#usesDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitUsesDeclaration(SarlParser.UsesDeclarationContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SarlParser#objectDeclaration}.
 	 * @param ctx the parse tree
 	 */
