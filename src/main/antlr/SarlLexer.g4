@@ -461,8 +461,8 @@ Inside_Identifier: Identifier -> type(Identifier) ;
 Inside_LabelReference: LabelReference -> type(LabelReference) ;
 Inside_LabelDefinition: LabelDefinition -> type(LabelDefinition) ;
 Inside_Comment: (LineComment | DelimitedComment) -> channel(HIDDEN) ;
-Inside_WS: WS -> skip ;
-Inside_NL: NL -> skip ;
+Inside_WS: WS -> channel(HIDDEN) ;
+Inside_NL: NL -> channel(HIDDEN) ;
 
 
 mode LineString ;
@@ -515,7 +515,7 @@ MultiLineStrExprStart
     : '${' -> pushMode(StringExpression)
     ;
 
-MultiLineNL: NL -> skip ;
+MultiLineNL: NL -> channel(HIDDEN) ;
 
 
 mode StringExpression ;
@@ -589,8 +589,8 @@ StrExpr_Identifier: Identifier -> type(Identifier) ;
 StrExpr_LabelReference: LabelReference -> type(LabelReference) ;
 StrExpr_LabelDefinition: LabelDefinition -> type(LabelDefinition) ;
 StrExpr_Comment: (LineComment | DelimitedComment) -> channel(HIDDEN) ;
-StrExpr_WS: WS -> skip ;
-StrExpr_NL: NL -> skip ;
+StrExpr_WS: WS -> channel(HIDDEN) ;
+StrExpr_NL: NL -> channel(HIDDEN) ;
 
 /** "catch all" rule for any char not match in a token rule of your
  *  grammar. Lexers in Intellij must return all tokens good and bad.
