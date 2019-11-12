@@ -30,18 +30,6 @@ public class SarlParserBaseListener implements SarlParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterScript(SarlParser.ScriptContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitScript(SarlParser.ScriptContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterPreamble(SarlParser.PreambleContext ctx) { }
 	/**
 	 * {@inheritDoc}

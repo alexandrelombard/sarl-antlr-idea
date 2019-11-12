@@ -12,9 +12,9 @@ sarlFile
     : NL* preamble anysemi* (topLevelObject (anysemi+ topLevelObject?)*)? EOF
     ;
 
-script
-    : NL* preamble anysemi* (expression (anysemi+ expression?)*)? EOF
-    ;
+//script
+//    : NL* preamble anysemi* (expression (anysemi+ expression?)*)? EOF
+//    ;
 
 preamble
     : fileAnnotations? packageHeader importList
@@ -66,7 +66,7 @@ classDeclaration
     ;
 
 agentDeclaration
-    : modifierList? (AGENT) NL* simpleIdentifier
+    : modifierList? AGENT NL* simpleIdentifier
     (NL* typeParameters)? (NL* primaryConstructor)?
     (NL* COLON NL* delegationSpecifiers)?
     (NL* typeConstraints)?
@@ -74,7 +74,7 @@ agentDeclaration
     ;
 
 behaviorDeclaration
-    : modifierList? (BEHAVIOR) NL* simpleIdentifier
+    : modifierList? BEHAVIOR NL* simpleIdentifier
     (NL* typeParameters)? (NL* primaryConstructor)?
     (NL* COLON NL* delegationSpecifiers)?
     (NL* typeConstraints)?
@@ -82,7 +82,7 @@ behaviorDeclaration
     ;
 
 capacityDeclaration
-    : modifierList? (CAPACITY) NL* simpleIdentifier
+    : modifierList? CAPACITY NL* simpleIdentifier
     (NL* typeParameters)? (NL* primaryConstructor)?
     (NL* COLON NL* delegationSpecifiers)?
     (NL* typeConstraints)?
@@ -90,7 +90,7 @@ capacityDeclaration
     ;
 
 eventDeclaration
-    : modifierList? (EVENT) NL* simpleIdentifier
+    : modifierList? EVENT NL* simpleIdentifier
     (NL* typeParameters)? (NL* primaryConstructor)?
     (NL* COLON NL* delegationSpecifiers)?
     (NL* typeConstraints)?

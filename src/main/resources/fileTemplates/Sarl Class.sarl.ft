@@ -1,8 +1,8 @@
-package ${NAME}
+package ${PACKAGE_NAME}
 
 /**
  * @author ${AUTHOR}
  *
  */
-class ${NAME} extends Object {
+class ${NAME} {
 }

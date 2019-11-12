@@ -20,16 +20,6 @@ public interface SarlParserListener extends ParseTreeListener {
 	 */
 	void exitSarlFile(SarlParser.SarlFileContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SarlParser#script}.
-	 * @param ctx the parse tree
-	 */
-	void enterScript(SarlParser.ScriptContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SarlParser#script}.
-	 * @param ctx the parse tree
-	 */
-	void exitScript(SarlParser.ScriptContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SarlParser#preamble}.
 	 * @param ctx the parse tree
 	 */

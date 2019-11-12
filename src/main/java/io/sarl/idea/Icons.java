@@ -6,5 +6,5 @@ import javax.swing.*;
 
 public class Icons {
 	public static final Icon SARL_ICON = IconLoader.getIcon("/io/sarl/sample.png");
-	public static final Icon FUNC_ICON = IconLoader.getIcon("/io/sarl/f.png");
+	public static final Icon FUNC_ICON = IconLoader.getIcon("/io/sarl/sample.png");
 }

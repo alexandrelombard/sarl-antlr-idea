@@ -66,12 +66,12 @@ public class SarlStructureViewElement implements StructureViewTreeElement, Sorta
 	@Override
 	public TreeElement[] getChildren() {
 		if ( element instanceof SarlPSIFileRoot) {
-			Collection<? extends PsiElement> classes = XPath.findAll(SarlLanguage.INSTANCE, element, "/sarlFile/classDeclaration/identifier");
-			List<TreeElement> treeElements = new ArrayList<>(classes.size());
-			for (PsiElement el : classes) {
+			Collection<? extends PsiElement> topLevelElements = XPath.findAll(SarlLanguage.INSTANCE, element, "/sarlFile/topLevelObject/*/simpleIdentifier");
+			List<TreeElement> treeElements = new ArrayList<>(topLevelElements.size());
+			for (PsiElement el : topLevelElements) {
 				treeElements.add(new SarlStructureViewElement(el));
 			}
-			return treeElements.toArray(new TreeElement[classes.size()]);
+			return treeElements.toArray(new TreeElement[topLevelElements.size()]);
 		}
 		return new TreeElement[0];
 	}

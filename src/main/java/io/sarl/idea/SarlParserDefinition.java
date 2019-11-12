@@ -75,9 +75,10 @@ public class SarlParserDefinition implements ParserDefinition {
 			protected ParseTree parse(Parser parser, IElementType root) {
 				// start rule depends on root passed in; sometimes we want to create an ID node etc...
 				if ( root instanceof IFileElementType ) {
-					return ((SarlParser) parser).script();
+					return ((SarlParser) parser).sarlFile();
 				}
 				// let's hope it's an ID as needed by "rename function"
+				// FIXME
 				return ((SarlParser) parser).sarlFile();
 			}
 		};
