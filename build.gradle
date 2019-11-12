@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.12'
+    id 'antlr'
+}
+
+group 'io.sarl'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+generateGrammarSource {
+    outputDirectory = file('src/main/java/io/sarl/antlr')
+//    arguments += ["-visitor",
+//                  "-long-messages",
+//                  "-package", "io.sarl.antlr"]
+
+}
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+    }
+
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+dependencies {
+//    compile group: 'org.antlr.grammars', name: 'kotlin', version: '1.0-SNAPSHOT'
+    antlr('org.antlr:antlr4:4.7.2') {
+        exclude group:'com.ibm.icu', module:'icu4j'
+    }
+    implementation group: 'org.antlr', name: 'antlr4-intellij-adaptor', version: '0.1'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.2.3'
+}
+
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}

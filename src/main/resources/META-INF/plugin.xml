@@ -1,0 +1,52 @@
+<idea-plugin>
+    <id>io.sarl.sarl-antlr-idea</id>
+    <name>SARL/Kotlin for Intellij IDEA</name>
+    <vendor email="alexandre.lombard@utbm.fr" url="http://www.ciad-lab.fr">CIAD lab</vendor>
+
+    <description><![CDATA[
+    SARL plugin for Intellij IDEA.<br />
+    ]]></description>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <application-components>
+    </application-components>
+
+    <project-components>
+        <component>
+            <implementation-class>io.sarl.idea.SarlPluginController</implementation-class>
+        </component>
+    </project-components>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <moduleType id="SARL_MODULE" implementationClass="io.sarl.idea.SarlModuleType" />
+        <fileTypeFactory implementation="io.sarl.idea.SarlFileTypeFactory"/>
+<!--        <lang.syntaxHighlighterFactory language="Sarl"-->
+<!--                                       implementationClass="io.sarl.idea.SarlSyntaxHighlighterFactory"/>-->
+        <lang.parserDefinition language="Sarl"
+                               implementationClass="io.sarl.idea.SarlParserDefinition" />
+        <lang.ast.factory language="Sarl"
+                          implementationClass="io.sarl.idea.SarlASTFactory" />
+        <lang.psiStructureViewFactory language="Sarl"
+                                      implementationClass="io.sarl.idea.structview.SarlStructureViewFactory" />
+        <colorSettingsPage implementation="io.sarl.idea.SarlColorSettingsPage"/>
+<!--        <externalAnnotator language="Sarl"-->
+<!--                           implementationClass="io.sarl.idea.SarlExternalAnnotator"/>-->
+<!--        <lang.findUsagesProvider language="Sarl"-->
+<!--                                 implementationClass="io.sarl.idea.SarlFindUsagesProvider"/>-->
+
+        <internalFileTemplate name="Sarl Class"/>
+        <internalFileTemplate name="Sarl Agent"/>
+        <internalFileTemplate name="Sarl Behavior"/>
+        <internalFileTemplate name="Sarl Capacity"/>
+        <internalFileTemplate name="Sarl Event"/>
+        <internalFileTemplate name="Sarl Skill"/>
+    </extensions>
+
+    <actions>
+        <action id="Sarl.NewFile" class="io.sarl.idea.actions.NewSarlFileAction"
+                text="Sarl File" description="Create new Sarl file">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+        </action>
+    </actions>
+</idea-plugin>
