@@ -160,11 +160,13 @@ classMemberDeclaration
 
 agentMemberDeclaration
 	: (classMemberDeclaration
+	| usesDeclaration
 	| onDeclaration) anysemi*
 	;
 
 behaviorMemberDeclaration
 	: (classMemberDeclaration
+	| usesDeclaration
 	| onDeclaration) anysemi*
 	;
 
@@ -226,6 +228,11 @@ onDeclaration
     (NL* typeReference)?
     (NL* functionBody)?
     ;
+
+usesDeclaration
+	: USES
+	((NL* typeReference) | (NL* typeReference COMMA)* (NL* typeReference))
+	;
 
 objectDeclaration
     : modifierList? OBJECT
